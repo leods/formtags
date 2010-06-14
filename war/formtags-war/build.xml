@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="formtags-war" xmlns:ivy="antlib:org.apache.ivy.ant">
+
+	<property file="${basedir}/../../build.properties"/>
+	<property file="${basedir}/../../build.versions"/>
+	<property file="${basedir}/build.properties"/>
+
+	<tstamp>
+		<format property="timestamp" pattern="yyyyMMddHHmmss" timezone="GMT"/>
+	</tstamp>
+
+	<target name="clean"
+			description="Removes the target directory.">
+		<delete quiet="true" dir="${target.dir}"/>
+	</target>
+
+	<target name="clean-integration"
+			description="Removes the integration repository directory.">
+		<fail message="The 'integration.repo.dir' property must be set on this project.">
+			<condition>
+				<not>
+					<isset property="integration.repo.dir"/>
+				</not>
+			</condition>
+		</fail>
+		<delete quiet="true" dir="${integration.repo.dir}"/>
+	</target>
+
+	<target name="jar"
+			description="Creates a WAR file containing the output of a compilation of the source tree.">
+		<delete quiet="true" file="${war.output.file}"/>
+		<mkdir dir="${war.output.dir}"/>
+		<delete quiet="true" file="${source-jar.output.file}"/>
+		<mkdir dir="${source-jar.output.dir}"/>
+
+		<copy todir="${war.staging.dir}">
+			<fileset dir="${main.webapp.dir}"/>
+		</copy>
+
+		<path id="compile.classpath">
+			<fileset dir="${main.webapp.dir}/WEB-INF/lib"/>
+		</path>
+
+		<delete quiet="true" dir="${war.classes.dir}"/>
+		<mkdir dir="${war.classes.dir}"/>
+		<javac destdir="${war.classes.dir}" source="${source.version}" target="${target.version}"
+				debug="${compile.debug}" debugLevel="${compile.debug.level}">
+			<src path="${main.java.dir}"/>
+			<include name="**/*.java"/>
+			<include name="*.java"/>
+			<classpath refid="compile.classpath"/>
+		</javac>
+		<copy todir="${war.classes.dir}">
+			<fileset dir="${main.java.dir}">
+				<exclude name="**/*.java"/>
+				<exclude name="*.java"/>
+			</fileset>
+		</copy>
+		<copy todir="${war.classes.dir}">
+			<fileset dir="${main.resources.dir}"/>
+		</copy>
+
+		<jar destfile="${war.output.file}" basedir="${war.staging.dir}" index="true" filesetmanifest="merge"/>
+		<jar destfile="${source-jar.output.file}" basedir="${main.java.dir}" index="true"/>
+	</target>
+
+	<target name="package">
+		<mkdir dir="${package.dist.dir}"/>
+		<copy file="${war.output.file}" tofile="${package.dist.dir}/${package.war.output.file}"/>
+	</target>
+
+	<target name="report" description="Does nothing."/>
+	
+	<target name="test.do" description="Does nothing."/>
+
+	<target name="clover.do" description="Does nothing."/>
+
+	<target name="findbugs.do" description="Does nothing."/>
+</project>
