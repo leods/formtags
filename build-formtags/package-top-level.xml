@@ -16,6 +16,7 @@
 				<exclude name="integration-repo/**" />
 				<exclude name="ivy-cache/**" />
 				<exclude name="**/target/**"/>
+				<exclude name=".git*"/>
 			</fileset>
 		</copy>
 
