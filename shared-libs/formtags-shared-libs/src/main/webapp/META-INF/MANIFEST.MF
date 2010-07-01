@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Version: 2.0.1
-Bundle-Name: FormTags Shared Library War
+Bundle-Name: (incubation) FormTags Shared Library War
 Bundle-SymbolicName: org.springframework.showcase.formtags_shared_libs
 Import-Package: javax.servlet.http,
  javax.servlet.jsp.jstl.core;version="[1.1.2,1.2.0)"
