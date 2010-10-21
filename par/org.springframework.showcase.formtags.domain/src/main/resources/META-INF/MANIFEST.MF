@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Version: 2.0.1
-Bundle-Name: (incubation) FormTags Domain Model
+Bundle-Name: FormTags Domain Model
 Bundle-SymbolicName: org.springframework.showcase.formtags.domain_par
 Export-Package: org.springframework.showcase.formtags.domain
 Import-Bundle: com.springsource.javax.servlet;version="2.5.0"

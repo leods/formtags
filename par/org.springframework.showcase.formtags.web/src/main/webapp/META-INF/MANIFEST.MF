@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Version: 2.0.1
-Bundle-Name: (incubation) FormTags Web Bundle
+Bundle-Name: FormTags Web Bundle
 Bundle-SymbolicName: org.springframework.showcase.formtags.web_par
 Import-Package: org.springframework.showcase.formtags.domain,
  org.springframework.showcase.formtags.service,

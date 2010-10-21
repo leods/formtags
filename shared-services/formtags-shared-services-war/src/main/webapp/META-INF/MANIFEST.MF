@@ -1,6 +1,6 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: (incubation) FormTags Shared Services WAR
+Bundle-Name: FormTags Shared Services WAR
 Bundle-SymbolicName: org.springframework.showcase.formtags.web_shared_services
 Bundle-Version: 2.0.1
 Import-Package: javax.servlet.http,
