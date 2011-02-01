@@ -5,6 +5,9 @@
 	<property file="${basedir}/../../build.versions"/>
 	<property file="${basedir}/build.properties"/>
 
+	
+	<import file="${basedir}/../../virgo-build/common/common.xml"/>
+
 	<tstamp>
 		<format property="timestamp" pattern="yyyyMMddHHmmss" timezone="GMT"/>
 	</tstamp>

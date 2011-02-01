@@ -1,5 +1,5 @@
 Manifest-Version: 1.0
-Bundle-Version: 2.0.1
+Bundle-Version: 3.0.0
 Bundle-ManifestVersion: 2
 Bundle-Name: FormTags Service (and implementation)
 Bundle-SymbolicName: org.springframework.showcase.formtags.service_par
