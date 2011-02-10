@@ -18,7 +18,6 @@ Services WAR.
 
 PROJECTS
 
- - build-shared-services:            the build directory for the application
  - formtags-shared-services-service: the service bundle
  - formtags-shared-services-war:     the WAR
 

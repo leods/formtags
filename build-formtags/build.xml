@@ -4,7 +4,10 @@
 	<path id="bundles">
 		<pathelement location="${basedir}/../war/formtags-war" />
 		<pathelement location="${basedir}/../shared-libs/formtags-shared-libs"/>
-		<pathelement location="${basedir}/../shared-services/build-shared-services" />
+		
+		<pathelement location="${basedir}/../shared-services/formtags-shared-services-service"/>
+		<pathelement location="${basedir}/../shared-services/formtags-shared-services-war"/>
+		
 		<pathelement location="${basedir}/../par/org.springframework.showcase.formtags"/>
 	</path>
 
